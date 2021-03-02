@@ -1,8 +1,6 @@
 # 力扣
 
-========
-
-[English](./README.en_US.md) | 简体中文
+简体中文 | [English](./README.en_US.md)
 
 ### 算法
 
