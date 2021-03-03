@@ -32,30 +32,30 @@ export function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null
 ): ListNode | null {
-  let carry = 0;
-  let result: ListNode | null = null;
-  let preNode: ListNode | null = null;
+  let carry = 0; /** 进位 0|1 */
+  let head: ListNode | null = null;
+  let tail: ListNode | null = null;
 
   while (l1 || l2) {
     const sum = carry + (l1?.val ?? 0) + (l2?.val ?? 0);
 
+    carry = sum >= 10 ? 1 : 0;
     const current = new ListNode(sum % 10);
 
-    if (!result) result = current;
-
-    if (preNode) preNode!.next = current;
+    if (head) {
+      tail!.next = current;
+      tail = current;
+    } else {
+      head = tail = current;
+    }
 
     l1 = l1?.next ?? null;
     l2 = l2?.next ?? null;
-
-    carry = sum >= 10 ? 1 : 0;
-
-    preNode = current;
   }
 
-  if (carry) preNode!.next = new ListNode(carry % 10);
+  if (carry) tail!.next = new ListNode(1);
 
-  return result;
+  return head;
 }
 
 addTwoNumbers(
