@@ -1,15 +1,8 @@
 /**
- * Definition for singly-linked list.
- * class ListNode {
- *     val: number
- *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.next = (next===undefined ? null : next)
- *     }
- * }
- *
  * @see {@link https://leetcode.com/problems/add-two-numbers/}
+ *
+ * @example 链表
+ * numbers.reduce((next,value) => new ListNode(value, next), null);
  *
  */
 
@@ -22,17 +15,11 @@ class ListNode {
   }
 }
 
-const list = (numbers: number[]) => {
-  return numbers.reduceRight<ListNode | null>((next, number) => {
-    return new ListNode(number, next);
-  }, null);
-};
-
 export function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null
 ): ListNode | null {
-  let carry = 0; /** 进位 0|1 */
+  let carry = 0;
   let head: ListNode | null = null;
   let tail: ListNode | null = null;
 
@@ -57,40 +44,3 @@ export function addTwoNumbers(
 
   return head;
 }
-
-addTwoNumbers(
-  list([
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-  ]),
-  list([5, 6, 4])
-);
