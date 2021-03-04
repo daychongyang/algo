@@ -4,6 +4,8 @@
  * @example 链表
  * numbers.reduce((next,value) => new ListNode(value, next), null);
  *
+ * T(m,n) = O(max(m,n)) 链表长度
+ * S(m,n) = O(max(m,n))
  */
 
 class ListNode {
