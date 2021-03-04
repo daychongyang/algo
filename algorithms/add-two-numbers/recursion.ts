@@ -29,6 +29,7 @@ export function addTwoNumbers(
     node.next = addTwoNumbers(
       l1?.next ?? null,
       l2?.next ?? null,
+      // deno-lint-ignore ban-ts-comment
       // @ts-ignore
       sum >= 10 ? 1 : 0
     );
