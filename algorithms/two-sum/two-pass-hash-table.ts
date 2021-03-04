@@ -8,10 +8,14 @@ export function twoSum(nums: number[], target: number): number[] {
   const map: Record<string, number> = {};
 
   for (let i = 0; i < nums.length; i++) {
-    const current = nums[i];
-    const matchedIndex = map[target - current];
-    if (matchedIndex !== undefined) return [matchedIndex, i];
     map[nums[i]] = i;
+  }
+
+  for (let j = 0; j < nums.length; j++) {
+    const matched = target - nums[j];
+    if (map[matched] !== undefined) {
+      return [j, map[matched]];
+    }
   }
 
   throw new Error("No two sum solution");
