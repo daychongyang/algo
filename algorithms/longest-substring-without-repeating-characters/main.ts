@@ -1,10 +1,13 @@
+/**
+ * @see {@link https://leetcode.com/problems/longest-substring-without-repeating-characters/solution/}
+ */
 function lengthOfLongestSubstring(s: string): number {
-  const length = s.length;
+  const len = s.length;
   let longestSubstringLength = 0;
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < len; i++) {
     let e = i;
-    while (e < length) {
+    while (e < len) {
       const substring = s.substring(i, e + 1);
       if (
         Array.from(substring).some(
