@@ -19,28 +19,23 @@ export function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null
 ): ListNode | null {
-  let carry = 0;
-  let head: ListNode | null = null;
-  let tail: ListNode | null = null;
+  const carry = arguments[2] || 0;
+  let node: ListNode | null = null;
 
-  while (l1 || l2) {
+  if (l1 || l2) {
     const sum = carry + (l1?.val ?? 0) + (l2?.val ?? 0);
+    node = new ListNode(sum % 10);
 
-    carry = sum >= 10 ? 1 : 0;
-    const current = new ListNode(sum % 10);
-
-    if (head) {
-      tail!.next = current;
-    } else {
-      head = current;
-    }
-
-    tail = current;
-    l1 = l1?.next ?? null;
-    l2 = l2?.next ?? null;
+    node.next = addTwoNumbers(
+      l1?.next ?? null,
+      l2?.next ?? null,
+      // @ts-ignore
+      sum >= 10 ? 1 : 0
+    );
+  } else if (carry) {
+    node = new ListNode(carry % 10);
+    node.next = null;
   }
 
-  if (carry && tail) tail.next = new ListNode(1);
-
-  return head;
+  return node;
 }
