@@ -8,9 +8,8 @@ export function lengthOfLongestSubstring(s: string): number {
   let longestSubstringLength = 0;
 
   for (let i = 0, j = 0; j < len; j++) {
-    if (map[s.charAt(j)] !== undefined) {
-      longestSubstringLength = Math.max(longestSubstringLength, j - i + 1);
-    }
+    i = Math.max(map[s.charAt(j)] || 0, i);
+    longestSubstringLength = Math.max(longestSubstringLength, j - i + 1);
 
     map[s.charAt(j)] = j + 1;
   }
