@@ -1,4 +1,4 @@
-# 力扣
+# Algo
 
 简体中文 | [English](./README.en_US.md)
 
