@@ -32,11 +32,21 @@ temp = 待插入位置的前驱节点.next
 #### 迭代
 
 ```ts
-let current =  head
-while current {
-  console.log(current)
+let current: ListNode<number> | null = head;
+while (current) {
+  console.log(current);
 
-  current = head.next
+  current = current.next;
+}
+```
+
+```ts
+for (
+  let current: ListNode<number> | null = head;
+  current;
+  current = current.next
+) {
+  console.log(current);
 }
 ```
 
