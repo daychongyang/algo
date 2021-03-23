@@ -1,6 +1,6 @@
 # 链表(一叉树)
 
-[题目集合](https://leetcode-cn.com/problemset/all/?topicSlugs=linked-list)
+[力扣链表题集](https://leetcode-cn.com/problemset/all/?topicSlugs=linked-list)
 
 链表是一种物理存储单元上非连续、非顺序的存储结构, 数据元素的逻辑顺序是通过链表中的指针链接次序实现的。
 
@@ -11,7 +11,7 @@ interface ListNode<T> {
 }
 ```
 
-## 操作
+## 基本操作
 
 ### 插入
 
@@ -64,7 +64,7 @@ function travere(current: ListNode) {
 traverse(head);
 ```
 
-## 注意点
+## 常见问题
 
 ### 指针的修改
 
@@ -130,4 +130,6 @@ export function reverse<T>(
 }
 ```
 
-### 链表的拼接
+### 链表的合并
+
+[#21 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists)
