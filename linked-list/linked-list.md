@@ -68,7 +68,7 @@ traverse(head);
 
 ### 指针的修改
 
-#### [链表反转](../linked-list/linked_list_reverse.ts)
+#### [链表反转](./linked_list_reverse.ts)
 
 ```ts
 import { ListNode } from "./linked_list.ts";

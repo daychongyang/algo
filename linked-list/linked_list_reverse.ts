@@ -18,3 +18,16 @@ export function reverse<T>(head: ListNode<T>): ListNode<T> {
 
   return next;
 }
+
+export function reverseArray(array: number[]) {
+  let left = 0;
+  let right = array.length - 1;
+
+  while (left < right) {
+    const temp = array[left];
+    array[left++] = array[right];
+    array[right--] = temp;
+  }
+
+  return array;
+}

@@ -10,7 +10,7 @@
 
 ## 专题
 
-- [链表](./docs/linked-list.md)
+- [链表](./linked-list/linked-list.md)
 
 ## 参考
 
