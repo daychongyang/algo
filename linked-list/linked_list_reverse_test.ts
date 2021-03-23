@@ -8,31 +8,29 @@ import {
   reversedByPostOrder,
 } from "./linked_list_reverse.ts";
 
+const numbers = [1, 2, 1, 3, 8, 9, 5, 2, 7];
+const reversedNumbers = numbers.slice().reverse();
+
 Deno.test("reverse array", () => {
-  const numbers = [1, 2, 1, 3, 8, 9, 5, 2, 7];
-  assertEquals(reverseArray(numbers), numbers.reverse());
+  assertEquals(reverseArray(numbers.slice()), reversedNumbers);
 });
 
+const expected = array2LinkedList(reversedNumbers);
+
 Deno.test("reverse linked list by iteration", () => {
-  const numbers = [1, 2, 1, 3, 8, 9, 5, 2, 7];
   const origin = array2LinkedList(numbers);
-  const expected = array2LinkedList(numbers.reverse());
 
   assertEquals(reversedByIteration(origin), expected);
 });
 
 Deno.test("reverse linked list by preOrderTraverse", () => {
-  const numbers = [1, 2, 1, 3, 8, 9, 5, 2, 7];
   const origin = array2LinkedList(numbers);
-  const expected = array2LinkedList(numbers.reverse());
 
   assertEquals(reversedByPreOrder(origin), expected);
 });
 
 Deno.test("reverse linked list by postOrderTraverse", () => {
-  const numbers = [1, 2, 1, 3, 8, 9, 5, 2, 7];
   const origin = array2LinkedList(numbers);
-  const expected = array2LinkedList(numbers.reverse());
 
   assertEquals(reversedByPostOrder(origin), expected);
 });
