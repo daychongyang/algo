@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std@0.91.0/testing/asserts.ts";
 
-import { array2LinkedList } from "./linked_list.ts";
+import { array2SinglyLinkedList } from "./linked_list.ts";
 import {
   reverseArray,
   reversedByIteration,
@@ -15,22 +15,22 @@ Deno.test("reverse array", () => {
   assertEquals(reverseArray(numbers.slice()), reversedNumbers);
 });
 
-const expected = array2LinkedList(reversedNumbers);
+const expected = array2SinglyLinkedList(reversedNumbers);
 
 Deno.test("reverse linked list by iteration", () => {
-  const origin = array2LinkedList(numbers);
+  const origin = array2SinglyLinkedList(numbers);
 
   assertEquals(reversedByIteration(origin), expected);
 });
 
 Deno.test("reverse linked list by preOrderTraverse", () => {
-  const origin = array2LinkedList(numbers);
+  const origin = array2SinglyLinkedList(numbers);
 
   assertEquals(reversedByPreOrder(origin), expected);
 });
 
 Deno.test("reverse linked list by postOrderTraverse", () => {
-  const origin = array2LinkedList(numbers);
+  const origin = array2SinglyLinkedList(numbers);
 
   assertEquals(reversedByPostOrder(origin), expected);
 });
