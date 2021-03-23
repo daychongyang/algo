@@ -70,6 +70,8 @@ traverse(head);
 
 #### [链表反转](./linked_list_reverse.ts)
 
+##### 迭代
+
 ```ts
 import { ListNode } from "./linked_list.ts";
 
@@ -90,6 +92,41 @@ export function reverse<T>(head: ListNode<T>): ListNode<T> {
   head.next = null; // 处理尾结点
 
   return next;
+}
+```
+
+##### 递归
+
+```ts
+import { ListNode } from "./linked_list.ts";
+
+export function reverse<T>(head: ListNode<T> | null): ListNode<T> | null {
+  if (!head || !head.next) return head;
+
+  // 前序遍历
+  const next = reverse(head.next);
+
+  // 环
+  head.next.next = head;
+  head.next = null;
+
+  return next;
+}
+```
+
+```ts
+import { ListNode } from "./linked_list.ts";
+
+export function reverse<T>(
+  head: ListNode<T> | null,
+  pre: ListNode<T> | null = null
+): ListNode<T> {
+  if (!head) return pre;
+
+  head.next = pre;
+
+  // 后序遍历
+  return reverse(head.next, head);
 }
 ```
 
