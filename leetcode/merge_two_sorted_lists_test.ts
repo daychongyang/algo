@@ -16,8 +16,6 @@ Deno.test("leetcode#21 merge-two-sorted-lists", () => {
   const l1 = array2SinglyLinkedList(n1);
   const l2 = array2SinglyLinkedList(n2);
 
-  console.log(l1);
-
   assertEquals(
     mergeTwoLists(l1, l2),
     array2SinglyLinkedList(n1.concat(n2).sort())
